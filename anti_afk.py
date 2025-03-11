@@ -3,7 +3,8 @@ import pygetwindow as gw
 import pyautogui
 import platform
 
-WINDOW_TITLE = "Roblox"
+SYSTEM = platform.system()
+WINDOW_TITLE = "Sober" if SYSTEM == "Linux" else "Roblox"
 
 def bring_window_to_front():
     try:
