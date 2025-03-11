@@ -1,6 +1,7 @@
 import time
 import pygetwindow as gw
 import pyautogui
+import platform
 
 WINDOW_TITLE = "Roblox"
 
