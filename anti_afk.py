@@ -10,9 +10,13 @@ def bring_window_to_front():
     try:
         pos_x, pos_y = pyautogui.position()
         sleep_time = 0.1
-        window = gw.getWindowsWithTitle(WINDOW_TITLE)
-        if window:
-            win = window[0]
+        windows = gw.getWindowsWithTitle(WINDOW_TITLE)
+        win = None
+        for window in windows:
+            if window.title == WINDOW_TITLE:
+                win = window
+
+        if win:
             if win.isMinimized:
                 win.restore()
             win.activate()
